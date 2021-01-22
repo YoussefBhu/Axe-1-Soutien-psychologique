@@ -1,0 +1,26 @@
+<div> 
+<div style="width: 30%;height: 90%;float:left;white-space: normal; text-align: center;margin: 0;position: fixed;overflow-y: scroll;">
+<div class="header"><h2>Room Chats</h2></div>
+<p class="add" *ngIf="allowtocreate()"> 
+    <button mat-mini-fab  (click)="Create()" >
+        <mat-icon >add</mat-icon>
+    </button>
+    <span>Créer un roomchat</span>
+</p>
+<button matRipple class="card" *ngFor="let room of roomChats" (click)="setCurrentRoom(room)" [ngClass]="currentRoomChat!= null && room.id==currentRoomChat.id ? 'disabled' : 'card' "> 
+    <p class="sujet"><span style="font-weight: bold;">Sujet : </span>{{room.sujet}} </p>
+    <p class="creator">par {{room.creator.prenom+" "+room.creator.name}} 
+        <button (click)="deleteRoom(room.id)" class="delete" *ngIf="allowtocreate()">
+            <span>
+                <mat-icon>close</mat-icon>
+            </span>
+        </button>  
+    </p>
+</button> 
+</div>
+<div style="width: 69%;float: right;">
+<app-chat
+[sujet]="currentRoomChat"
+></app-chat>
+</div>
+</div>

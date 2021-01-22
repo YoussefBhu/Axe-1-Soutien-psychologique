@@ -1,0 +1,15 @@
+<html>
+  <head>
+  </head>
+  <body >
+    <div *ngIf="loggedin else login"> 
+      <app-bar id="myHeader" ></app-bar> 
+    <div style="position: fixed; overflow-y: scroll;height: 90%;width:100%;background-color:rgba(255, 255, 255, 0.3);">
+      <router-outlet></router-outlet>
+    </div>
+    </div>
+    <ng-template #login> 
+      <router-outlet></router-outlet>
+    </ng-template>
+  </body>
+</html>

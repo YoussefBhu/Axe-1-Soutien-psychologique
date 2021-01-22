@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="title">
+       <h1>My Posts</h1>
+    </div>
+    <div style="margin-bottom: 20px;" class="container mt-3" *ngFor="let article of Articles">
+        <div class="media border p-3">
+          <img src="https://ptetutorials.com/images/user-profile.png"  alt="userName" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+          <div class="media-body">
+            <h4>{{article.auteur.name}} {{article.auteur.prenom}}<small><i>  {{date(article.date)}}</i></small></h4>
+            <p style="font-size: 30px">Titre : {{article.titre}}</p>     
+          </div>
+          <div class="buttons">
+            <button (click)="delete(article.id)" style="margin-left: 10px;" type="button" class="btn btn-danger" >Delete</button>
+        </div>
+        </div>
+      </div>  
+  </div>

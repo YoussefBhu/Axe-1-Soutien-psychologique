@@ -1,0 +1,35 @@
+
+<div class="example-button-row"> 
+    <button (click)="Create()" mat-raised-button><mat-icon>add</mat-icon> Créer un article</button> 
+</div>
+<div class="container" *ngFor="let articles of article" >
+    <div class="card-div">
+        <div class="card" >
+            <h6 class="card-title"> <img src="/assets/pics/man.png" style="margin-top:20px;margin-right:10px;margin-left:20px;width:60px;">
+                   <span style="font-size: 15px;"> {{articles.auteur.name}}</span>  <span style="float: right;margin-top:20px;margin-right:10px;">{{getDate(articles.date)}}</span><br>
+            </h6>
+             <div class="container">
+                 <p style="font-size: 20px;font-weight: bold;margin-left: 10px;">{{articles.titre}}</p>
+                <p style="padding: 20px">
+                       {{articles.contenue}}   
+                </p>
+            </div>
+            <div class="container">
+                <mat-expansion-panel style="margin-bottom: 10px;background-color:rgb(233, 233, 233)" (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title >
+                           <p style="text-align: center;width: 100%;margin-bottom: 0;font-size: 17px;"><mat-icon style="vertical-align:middle;">comment</mat-icon> Commentaires</p>
+                        </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <app-comment [Comments]="articles.commentaires"></app-comment>
+                </mat-expansion-panel>
+                <div class="comment">
+                    <input required [(ngModel)]="comment.contenue"  type="text" class="form-control" placeholder="Add a comment ...">
+                    <!--(click)="displayComment(articles.id)"-->
+                    <button (click)="postComment(articles.id,articles.auteur.id)" style="background-color: transparent;border: 0px;" ><mat-icon style="color: rgb(52, 143, 235);">send</mat-icon></button> 
+                </div>      
+            </div>        
+        </div>   
+    </div>
+</div>

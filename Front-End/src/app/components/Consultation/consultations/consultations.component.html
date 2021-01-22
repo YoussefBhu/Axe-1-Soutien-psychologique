@@ -1,0 +1,13 @@
+<div style="padding: 30px;"> 
+    <h1 style="font-family: 'poppins';text-align: center;">N'hésitez pas à demander de l'aide</h1>
+<h2 style="font-family: 'poppins'">Mes Consultations : 
+    <button *ngIf="AllowToCreate()" class="Create" (click)="Create()" mat-raised-button><mat-icon>add</mat-icon> Créer une consultation</button>
+</h2>
+<div  style="text-align: left;margin-top: 30px;"> 
+    <button  (click)="GoToConsultation(consultation)" [disabled]="!consultation.active" [ngClass]="consultation.active ? 'card' : 'resolu'"  matRipple class="card" *ngFor="let consultation of Consultations"> 
+        <p class="statut"><span style="font-weight: bold;">Status : </span>{{returnState(consultation.active)}} <mat-icon *ngIf="consultation.active" style="vertical-align: middle;">question_answer</mat-icon> <mat-icon *ngIf="!consultation.active" style="vertical-align: middle;">check</mat-icon></p>
+        <p class="sujet">sujet :{{consultation.sujet}} </p>
+        <p class="creator">Avec: Dr. {{consultation.psychologue.prenom+" "+consultation.psychologue.name}}</p>
+    </button>
+</div>
+</div>

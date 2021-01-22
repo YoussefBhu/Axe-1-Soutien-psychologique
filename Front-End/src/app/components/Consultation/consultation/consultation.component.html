@@ -1,0 +1,44 @@
+<div class="info">
+    <div class="header_info">
+        <a routerLink="/Consultations"> <button><mat-icon >arrow_back_ios</mat-icon> </button></a>
+    </div>
+   
+    <div class="avatar">
+        <img  src="https://ptetutorials.com/images/user-profile.png" alt="error">
+        <p><span *ngIf="!Psychologue() else NUser">Dr.  {{Consultation.psychologue.prenom+" "+Consultation.psychologue.name}}</span><ng-template #NUser>{{Consultation.patient.prenom+" "+Consultation.patient.name}}<br/>( {{Consultation.patient.type}} )</ng-template></p>
+    </div>
+    <div class="sujet">
+        <p><span >Sujet</span> : {{Consultation.sujet}}</p>
+    </div>
+    <div  *ngIf="Psychologue()"  class="confirm">
+        Marqué comme résolu : <button (click)="Confirme()" style="background-color:rgb(52, 143, 235) ; color: white;" mat-raised-button><mat-icon>checked</mat-icon></button>
+    </div>
+    
+</div> 
+        <div class="mesgs" >
+            <div #msgHistory class="msg_history">
+                <div *ngFor="let message of messages">
+                    <div class="outgoing_msg" *ngIf="(user.userName == message.username) else incoming">
+                        <div class="sent_msg">
+                          <p>{{message.message}}</p>
+                          <span class="time_date">{{getDate(message.date)}}</span> </div>
+                      </div>
+                      <ng-template #incoming>
+                    <div class="incoming_msg" >
+                        <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                        <div class="received_msg">
+                          <div class="received_withd_msg">
+                            <p>{{message.message}}</p>
+                            <span class="time_date">{{getDate(message.date)}}</span></div>
+                        </div>
+                      </div>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="input_msg_write" >
+                <mat-form-field style="width: 95%;height: 14%;">
+                   <textarea color="warn"  matInput placeholder="Message" [(ngModel)]="send.message"></textarea>
+                 </mat-form-field>
+                <button (click)="sendMessage();"><mat-icon >send</mat-icon></button> 
+                 </div>
+          </div>

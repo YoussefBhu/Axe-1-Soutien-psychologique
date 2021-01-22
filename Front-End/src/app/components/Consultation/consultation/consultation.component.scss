@@ -1,0 +1,150 @@
+
+.info {
+  width: 30%;
+  float:left;
+  font-family: 'poppins';
+  padding:10px; 
+  display: block;
+}
+
+.header_info{
+  border-bottom: 2px solid rgb(52, 143, 235);
+  padding-bottom: 5px;
+  button {
+    &:focus {outline:0;}
+    background-color: transparent;
+    border: 0px;
+    width: 5%;
+    text-align: center;
+  }
+  mat-icon{
+    color: rgb(52, 143, 235);
+  }
+}
+
+.avatar {
+  padding: 10px;
+  text-align: center;
+  font-family: 'poppins';
+  img {
+    width: 30%;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+.sujet {
+  p {
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.confirm{
+  button {
+    &:focus {outline:0;}
+  }
+}
+
+img{ max-width:100%;}
+
+.incoming_msg{
+  margin:26px 0 20px;
+}
+
+.incoming_msg_img {
+  display: inline-block;
+  width: 6%;
+}
+.received_msg {
+  font-family: 'Poppins';
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+  font-size: 14px;
+ }
+ .received_withd_msg p {
+  background: #ebebeb none repeat scroll 0 0;
+  border-radius: 3px;
+  color: #646464;
+  font-size: 14px;
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+}
+.time_date {
+  color: #747474;
+  display: block;
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+.received_withd_msg { width: 57%;}
+.mesgs {  
+  position: fixed;
+  overflow-y:scroll; 
+  height: 95%;
+  border-left: 3px solid rgb(52, 143, 235);
+  padding-left: 10px;
+  padding-top: 5px;
+  right: 0;
+  padding: 0px 15px 0 0px;
+  width: 70%;
+  display: block;
+}
+
+ .sent_msg p {
+  font-family: 'Poppins';
+  background:  rgb(52, 143, 235) none repeat scroll 0 0;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0; color:#fff;
+  padding: 5px 10px 5px 12px;
+  width:100%;
+}
+.outgoing_msg{ overflow:hidden; margin:26px 0 20px;margin-right: 10px;}
+.sent_msg {
+  float: right;
+  width: 46%;
+}
+
+.input_msg_write{
+  margin-left: 15px;
+  button {
+    background-color: transparent;
+    border: 0px;
+    width: 5%;
+    text-align: center;
+    &:focus {outline:0;}
+    mat-icon {
+      color: rgb(52, 143, 235);
+    }
+  }
+}
+.input_msg_write input {
+  font-size: 15px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.msg_send_btn {
+  background: #05728f none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+  height: 33px;
+  position: absolute;
+  right: 0;
+  top: 11px;
+  width: 33px;
+}
+.messaging { padding: 0 0 50px 0;}
+.msg_history {
+  padding-left: 10px;
+border-bottom: 2px solid  rgb(52, 143, 235);
+height: 85%;
+overflow-y: auto;
+}

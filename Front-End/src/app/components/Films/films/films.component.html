@@ -1,0 +1,19 @@
+<div class="example-button-row">
+    <button *ngIf="Role('ADMIN')" (click)="Showsugg()" mat-raised-button >Afficher les suggestions</button>
+    <button *ngIf="Role('ADMIN')" (click)="Create()"  mat-raised-button >Ajouter un film</button>
+    <button *ngIf="Role('PSYCHOLOGUE')" (click)="Addsugg()" mat-raised-button >Suggérer un film</button>
+</div>
+<div class="film" *ngFor="let films of film">
+<mat-card class="example-card">
+    <div><img width="100%"  src="../assets/image/{{films.nom}}.jpg"></div>
+</mat-card>
+<mat-card class="example-card1" >
+    <div class="title"><label >{{films.nom}}</label></div>
+    <div >Categorie : <label>{{ films.genre }}</label></div>
+    <div >duration : <label>{{ films.duration }}</label></div>
+    <div >description : <label class="label-description">{{ films.description }}</label></div>
+    <div style="float: right;">
+        <button (click)="Watch(films)" mat-raised-button >watch</button>  
+    </div>
+</mat-card>
+</div>

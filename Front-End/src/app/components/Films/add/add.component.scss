@@ -1,0 +1,38 @@
+
+.imageUpl {
+    top: 50px;
+    width: 30%;
+    right: 100px;
+    position: relative;
+}
+
+.title {
+    width: 100%;
+}
+.Genre {
+    width: 47%;
+}
+.Duration{
+    width: 47%;
+    margin-left: 6%;
+}
+.add {
+    button {
+        background-color:  rgb(52, 143, 235);
+        margin-right: 10px;
+    }
+
+  }
+
+.Description {
+    width: 100%;
+}
+.titlePAGE {
+    width: 100%;
+    text-align: center;
+
+}
+
+.hidden{
+    visibility: hidden;
+}

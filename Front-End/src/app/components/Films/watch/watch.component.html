@@ -1,0 +1,10 @@
+
+<div style="text-align: center;" class="header_info">
+  <a style="float: left;" routerLink="/Films"> <button><mat-icon  >arrow_back_ios</mat-icon> </button></a>
+  <p style="font-family: 'poppins';font-size: large;">{{movie.nom}}</p>
+</div>
+<div class="video">
+  <video width="70%" controls controlsList="nodownload">
+    <source src="../../../../assets/Videos/{{movie.nom}}.mp4" type="video/mp4">  
+  </video>
+</div>

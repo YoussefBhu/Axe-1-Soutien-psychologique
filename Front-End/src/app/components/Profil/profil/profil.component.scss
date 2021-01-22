@@ -1,0 +1,90 @@
+.container {
+    padding-top: 50px;
+    margin: 0 120px;
+    margin-bottom: 50px;
+}
+.profile-img{
+    float: left;
+    width: 340px;
+    height: 200px;
+}
+.profile-header{
+    width: 100%;
+    background-color: rgba(177, 180, 180, 0.342);
+    display: flex;
+    height: 190px;
+    position: relative;
+    box-shadow: 0px 3px 4px rgba(0,0,0,.2);
+}
+.profile-img img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 3px solid rgb(122, 160, 241);
+    box-shadow: 0px 5px 10px rgba(0,0,0,.2);
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    z-index: 5;
+    background: #fff;
+}
+.profile-nav-info{
+    float: left;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 60px;
+}
+.profile-nav-info h3{
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.profile-nav-info .user-name{
+    display: flex;
+    font-weight: bold;
+    color: #777;
+}
+.profile-nav-info .user-name p{
+    margin-right: 5px;
+}
+.nav{
+
+    width: 100%;
+    z-index: -1;
+}
+.nav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    height: 40px;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.3) ;
+}
+.nav ul li {
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+.nav ul li active,
+.nav ul li:hover{
+    box-shadow: 0px -3px 0px rgba(39, 166, 197) inset;
+} 
+.profile-body{
+    width: 100%;
+    z-index: -1;
+}
+.tab{
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.h1{
+    padding: 20px;
+    width: 100%;
+    text-align: center; 
+}

@@ -1,0 +1,25 @@
+<div class="formulair">
+        <div class="titlePAGE">
+            <h1 style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Ajouter un film</h1>
+        </div>
+        <div class="inputs">
+            <br>
+            <mat-form-field class="title">
+                <input matInput placeholder="Movie Title" required [(ngModel)]="film.nom">
+            </mat-form-field>
+                <mat-form-field class="Genre">
+                    <input matInput placeholder="Genre" required [(ngModel)]="film.genre">
+                </mat-form-field>
+                <mat-form-field class="Duration">
+                    <input matInput placeholder="Duration" required [(ngModel)]="film.duration">
+                </mat-form-field>
+            <mat-form-field class="Description">
+                <textarea matInput placeholder="Description" required [(ngModel)]="film.description"></textarea>
+            </mat-form-field>
+            <div class="add">
+                <button type="button" [disabled]="submited" (click)="onNoClick()" mat-raised-button color="primary" >Fermer</button>
+                <button type="submit" [disabled]="submited" (click)="post()" mat-raised-button color="primary" >Ajouter</button>
+            </div>
+            <mat-progress-bar [ngClass]="submited ? 'none' : 'hidden'" style="margin-top: 20px;" mode="indeterminate"></mat-progress-bar>
+        </div>
+    </div>

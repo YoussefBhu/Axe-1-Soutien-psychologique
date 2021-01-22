@@ -1,0 +1,99 @@
+  <div> 
+    <mat-progress-bar [ngClass]="submited ? 'none' : 'hidden'" style="width: 100%;top: 0;" mode="indeterminate"></mat-progress-bar>
+  <div style="width: 40%;float: left;background-color: tomato;height: 100%;z-index: 2;">
+    <label class="firstTitle">FreeShare</label>
+      <img class="rectangle" src="../../assets/image/Rectangle.png">
+      <label class="secTitle">Share your thoughts <br> And free your mind</label>
+      <img class="vector" src="../../assets/image/Vector.png">
+  </div>
+  <div class="centre">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Login">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"  class="input">
+  
+              <mat-form-field class="example-full-width">
+                <input type="text" formControlName="username" matInput placeholder="Entre Your Email" required>
+              </mat-form-field>
+  
+              <mat-form-field class="example-full-width">
+                <input  type="password" formControlName="password" matInput placeholder="Entre Your Password" required>
+              </mat-form-field> 
+              <button [disabled]="submited" mat-raised-button >Login</button>
+             
+          </form>
+            <hr class="line">
+            <div class="icon">
+              <div><img mat-card-image src="../assets/image/001-gmail.png"></div>
+              <div><img mat-card-image src="../assets/image/004-twitter.png"></div>
+              <div><img mat-card-image src="../assets/image/003-facebook.png"> </div>
+              <div><img mat-card-image src="../assets/image/002-instagram.png"></div>
+            </div>
+          </mat-tab>
+          
+           
+          <mat-tab label="Join">
+          <form  [formGroup]="signupForm" (ngSubmit)="SubmitSignup()"  > 
+              <div style="margin : 20px; text-align: center;">
+              <span style="color: red;display: block" *ngIf="(signupForm.get('userName').touched || signupForm.get('userName').dirty ) && signupForm.get('userName').invalid"> 
+                  Le nom d'utilisateur doit comporter 8-16 caractères
+              </span>
+                <mat-form-field style="width : 60% ;">
+                  <input minlength="4" maxlength="16" formControlName="userName"  matInput placeholder="User name">
+                </mat-form-field>
+                  <br/>
+                  <span style="color: red;display: block" *ngIf="(signupForm.get('email').touched || signupForm.get('email').dirty ) && signupForm.get('email').invalid"> 
+                    Entrer un email valid
+                </span>
+                <mat-form-field style="width : 60% ;">
+                  <input formControlName="email"  type="email"  matInput placeholder="Address email">
+                </mat-form-field>
+                  <br/>
+                  <span style="color: red;display: block" *ngIf="(signupForm.get('password').touched || signupForm.get('password').dirty ) && signupForm.get('password').invalid"> 
+                    Le mot de passe doit comporter 8-16 caractères
+                </span>
+                <mat-form-field style="width : 40%"  >
+                  <input  minlength="8" maxlength="16" formControlName="password" type="password"  matInput placeholder="password">
+                </mat-form-field>
+                <mat-form-field style="width : 40%;margin-left: 30px;"  >
+                  <input minlength="8" maxlength="16" formControlName="cpassword" type="password"  matInput placeholder="confirme password">
+                </mat-form-field>
+                  <br/>
+                <mat-form-field style="width : 40%"  >
+                  <input minlength="2" maxlength="16" formControlName="name"  matInput placeholder="Nom">
+                </mat-form-field>
+                <mat-form-field style="width : 40%;margin-left: 30px;"  >
+                  <input minlength="2" maxlength="16" formControlName="prenom" matInput placeholder="Prenom">
+                </mat-form-field>
+                  <br/>
+                <mat-form-field style="width : 40%"  >
+                  <input minlength="10" maxlength="10" formControlName="num" matInput placeholder="Numero tele">
+                </mat-form-field>
+                <mat-form-field style="width : 40%;margin-left: 30px;">
+                  <mat-label>Select an option</mat-label>
+                  <mat-select formControlName="type">
+                    <mat-option value="Etudiant">Etudiant</mat-option>
+                    <mat-option value="Parent">Parent</mat-option>
+                    <mat-option value="Professeur">Professeur</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                  <br/>
+                <mat-form-field style="width: 40%;" appearance="fill">
+                  <mat-label>Date de Naissance</mat-label>
+                  <input formControlName="datenaissance" matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <div style="width: 100%;text-align: center;">
+                <button [disabled]="submited"  mat-raised-button >S'inscrire</button>
+              </div>
+              </div>
+          </form>
+          </mat-tab>
+         
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

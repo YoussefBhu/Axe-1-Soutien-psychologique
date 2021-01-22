@@ -1,0 +1,11 @@
+<mat-card id="card" >
+        <h1 style="text-align: center">Suggestion</h1>
+        </mat-card>
+ <div class="suggestions"  *ngFor="let filmSuggestions of filmSuggestion" > 
+     <mat-card id="card" >
+      <div> <label class="nomFilm">Nom de film : </label>  <label class="ContFilm" >{{filmSuggestions.nomFilm}} </label> </div><br>
+      <div> <label class="nomFilm">Note : </label>  <label class="ContFilm" >{{filmSuggestions.message}} </label> </div><br>
+      <div> <label class="nomFilm">par : </label>  <label class="ContFilm" >Dr. {{filmSuggestions.user.name}}  {{filmSuggestions.user.prenom}}</label> </div><br>   
+     </mat-card>
+ 
+ </div>

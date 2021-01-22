@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="title">
+      <h1>My infos personnelles</h1>
+   </div>
+
+  <div class="card-content">
+    
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">@ Nom d'utilisateur</span>
+      </div>
+      <input disabled  type="text" class="form-control"  value="{{user.userName}}">
+     
+      <div  class="input-group-prepend">
+        <span class="input-group-text"><mat-icon>person</mat-icon>Nom Complet</span>
+      </div>
+      <input disabled  type="text" class="form-control" value="{{user.name}} {{user.prenom}}">
+
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><mat-icon>email </mat-icon>Email</span>
+      </div>
+      <input disabled  type="text" class="form-control" value="{{user.email}}">
+      <div  class="input-group-prepend">
+        <span class="input-group-text"><mat-icon>phone</mat-icon>Num Télé</span>
+      </div>
+      <input disabled type="text" class="form-control" value="{{user.num}}">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><mat-icon>cake</mat-icon>Date naissance</span>
+      </div>
+      <input disabled  type="text" class="form-control" value="{{user.datenaissance}}">
+      <div  class="input-group-prepend">
+        <span  class="input-group-text"><mat-icon>person</mat-icon>Type</span>
+      </div>
+      <input disabled type="text" class="form-control" value="{{user.type}}">
+    </div>
+
+  </div>
+</div>
+

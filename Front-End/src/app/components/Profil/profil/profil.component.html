@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="profile-header">
+        <div class="profile-img">
+            <img src="https://ptetutorials.com/images/user-profile.png" width="10%" alt="">
+        </div>
+
+        <div class="profile-nav-info">
+            <h3 class="full-name">{{profile.name+" "+profile.prenom}}</h3>
+            <div class="user">
+                <p class="user-name">{{"@"+profile.userName}}</p>
+            </div>
+        </div> 
+    </div>
+
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4"> 
+            <mat-tab>
+                <ng-template mat-tab-label>
+                  <mat-icon>person</mat-icon>
+                    Personal Infos
+                </ng-template>
+                <app-infos></app-infos>
+            </mat-tab>  
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon>topic</mat-icon>
+                    Posts
+                </ng-template>
+                <app-posts></app-posts>
+            </mat-tab>
+       </mat-tab-group>
+</div>
+

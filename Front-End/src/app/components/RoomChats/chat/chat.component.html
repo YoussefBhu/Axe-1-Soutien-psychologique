@@ -1,0 +1,29 @@
+<div class="mesgs" *ngIf="sujet">
+  <div class="titre">Sujet : {{sujet.sujet}}</div>
+    <div #msgHistory class="msg_history">
+        <div *ngFor="let message of messages">
+            <div class="outgoing_msg" *ngIf="(user.userName === message.username) else incoming">
+                <div class="sent_msg">
+                  <p>{{message.message}}</p>
+                  <span class="time_date">{{getDate(message.date)}}</span> </div>
+              </div>
+              <ng-template #incoming>
+            <div class="incoming_msg" >
+                <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="received_msg">
+                  <div class="received_withd_msg">
+                    <p><span style="font-weight: bold;">{{message.fullname+" ("+message.type+") :"}}</span> <br/>
+                      {{message.message}}</p>
+                    <span class="time_date">{{getDate(message.date)}}</span></div>
+                </div>
+              </div>
+            </ng-template>
+        </div>
+    </div>
+    <div class="input_msg_write" >
+        <mat-form-field style="width: 95%;height: 14%;">
+           <textarea color="warn"  matInput placeholder="Message" [(ngModel)]="send.message"></textarea>
+         </mat-form-field>
+        <button (click)="sendMessage();"><mat-icon>send</mat-icon></button> 
+         </div>
+  </div>

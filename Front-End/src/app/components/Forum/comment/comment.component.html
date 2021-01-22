@@ -1,0 +1,13 @@
+<div class="container">
+        <div class="form-group">
+           
+            <mat-card>
+                <div class="comment" *ngFor="let comment of Comments">
+                <div class="comment1">  <img src="/assets/pics/man.png" style="width:60px; margin-right: 10px;"></div>
+                <div class="comment2">
+                    <h5 style="font-weight: bold;">{{comment.auteur.userName}} ({{comment.auteur.type}}) </h5> 
+                    {{comment.contenue}} 
+                </div></div></mat-card>
+              
+        </div>
+</div> 

@@ -1,0 +1,29 @@
+<p style="margin: 0; height: 10%;"> 
+<mat-toolbar style="color: white;padding: 5px;vertical-align: middle;">
+  
+  <fa-icon [icon]="Icon"></fa-icon><span style="font-size: 40px;margin-right: 10px;margin-left: 10px;"> | </span><span style="color: white;font-family: 'calligraffitti'; font-size: 25px;margin-top: 10px;font-weight: bold;">FreeShare</span>
+  <div style="padding-left: 60px;">
+          <a routerLink="/Forum"><button mat-button><mat-icon>forum</mat-icon> Forum</button></a>
+          <a routerLink="/Films"><button mat-button ><mat-icon>movies</mat-icon> Films</button></a>
+          <a routerLink="/Consultations"><button mat-button ><mat-icon>live_help</mat-icon> Consultation</button></a>
+          <a routerLink="/RoomChats"><button mat-button ><mat-icon>chat</mat-icon> Room Chats</button></a>
+  </div>
+  <span class="example-spacer"></span>
+ 
+  <mat-icon >account_circle</mat-icon>  
+  <span style="padding-left: 5px;font-size: 15px;">{{user.prenom+" "+user.name}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>expand_more</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button routerLink="/Profile" style="outline:0;" mat-menu-item>
+            <mat-icon>perm_identity</mat-icon>
+            <span>Profile</span>
+          </button>
+          <button mat-menu-item style="outline:0;" (click)="logout()" >
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Se déconnecter</span>
+          </button>
+        </mat-menu>
+</mat-toolbar>
+</p>

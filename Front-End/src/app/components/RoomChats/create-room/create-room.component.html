@@ -1,0 +1,9 @@
+    <mat-form-field style="width: 100%;">
+      <mat-label>Sujet</mat-label>
+      <textarea  color="warn" [(ngModel)]="sujet"  matInput placeholder="Sujet"></textarea>
+    </mat-form-field>
+  <div mat-dialog-actions>
+    <button [disabled]="submited" mat-raised-button class="primary" (click)="onNoClick()">Annuler</button>
+    <button [disabled]="submited" mat-raised-button (click)="create()" >Créer</button>
+    <mat-progress-bar [ngClass]="submited ? 'none' : 'hidden'" style="margin-top: 20px;" mode="indeterminate"></mat-progress-bar>
+  </div>
